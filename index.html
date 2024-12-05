@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Opening tags and sigle tags can have attributes -->
+<html lang="en" dir="ltr ">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Duan Wang">
+        <meta name="description" content="My web project">
+        <meta name="keyword" content="html, css, web, seo, web development">
+        <title>Cookies</title>
+        <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        <link rel="stylesheet" href="./assets/css/style.css" media="all">
+        <script src="./assets/js/index.js" defer></script>
+    </head>
+    <body>
+      <main>
+        <section class="hero-banner grid">
+            <div class="container content grid">
+                <h2>What Are Cookies?</h2>
+                <p>
+                    Cookies are small text files stored by the browser on a user's 
+                    device, created by websites to keep track of user information 
+                    across sessions. They enable websites to remember a user's 
+                    actions, preferences, or login status, improving the browsing 
+                    experience.
+                </p>
+            </div>
+        </section>
+        <section class="modal-one">
+            <div class="cookies-notice grid">
+                <h2>Cookies</h2>
+                <p>
+                    We use cookies to improve yourexperience on our website. 
+                    Byclicking "Accept",you agree tothe use of cookies for 
+                    marketing and analytics purposes.
+                </p>
+                <div class="cookies-choice flex">
+                    <button class="accept">Accept</button>
+                    <button class="settings">Settings</button>
+                </div>
+            </div>
+        </section>
+        <section class="modal-two">
+            <div class="cookies-set grid">
+                <h2>Setting</h2>
+                <div class="row flex space">
+                    <p>Browser</p>
+                    <label class="switch">
+                        <input type="checkbox" id="browser" class="browser-name"checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="row flex space">
+                    <p>Operating system</p>
+                    <label class="switch">
+                        <input type="checkbox" id="os" class="os-name"checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="row flex space">
+                    <p>Screen width</p>
+                    <label class="switch">
+                        <input type="checkbox" id="width" class="screen-width"checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="row flex space">
+                    <p>Screen height</p>
+                    <label class="switch">
+                        <input type="checkbox" id="height" class="screen-height" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <button class="save">Save preferences</button>
+            </div>
+        </section>
+      </main>
+    </body>
+</html>
