@@ -1,17 +1,13 @@
 'use strict';
-/*
+
+/*--------------------------------------------*/
+/*Function                                    */
+/*--------------------------------------------*/
+
 function setCookie(name, value, seconds) {
     const date = new Date();
     date.setSeconds(date.getSeconds() + seconds);
     document.cookie = `${name}=${value}; path=/; expires=${date.toUTCString()}`;
-}
-*/
-function setCookie(name, value, expiration) {
-    const date = new Date();
-    date.setTime(date.getTime() + (expiration * 1000));
-    let expires = "expires=" + date.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
-    
 }
 
 function getCookie(name) {
@@ -46,11 +42,25 @@ function getOS() {
     return os;
 }
 
+/*--------------------------------------------*/
+/*DOM                                         */
+/*--------------------------------------------*/
+
 const modalOne = document.querySelector('.modal-one');
 const modalTwo = document.querySelector('.modal-two');
 const acceptAll = document.querySelector('.accept');
 const settings = document.querySelector('.settings');
 const savePreferences = document.querySelector('.save');
+
+/*--------------------------------------------*/
+/*EventListener                               */
+/*--------------------------------------------*/
+
+if (!getCookie("fake cookie")) {
+    setTimeout(() => {
+        modalOne.style.display = 'flex';
+    }, 1000);
+}
 
 acceptAll.addEventListener("click", () => {
     setCookie("browser", getBrowser(), 15);
@@ -70,27 +80,19 @@ settings.addEventListener("click", () => {
 savePreferences.addEventListener("click", () => {
     if (document.querySelector(".browser-name").checked) {
         setCookie("browser", getBrowser(), 15);
-    } else {
-        document.cookie = "browser=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    }
+    } 
 
     if (document.querySelector(".os-name").checked) {
         setCookie("os", getOS(), 15);
-    } else {
-        document.cookie = "os=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    }
+    } 
 
     if (document.querySelector(".screen-width").checked) {
         setCookie("screen width", screen.width, 15);
-    } else {
-        document.cookie = "screen width=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    }
+    } 
 
     if (document.querySelector(".screen-height").checked) {
         setCookie("screen height", screen.height, 15);
-    } else {
-        document.cookie = "screen height=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    }
+    } 
 
     console.log(document.cookie);
     setCookie("fake cookie", "true", 15);
@@ -98,8 +100,3 @@ savePreferences.addEventListener("click", () => {
     modalTwo.style.display = 'none';
 });
 
-if (!getCookie("fake cookie")) {
-    setTimeout(() => {
-        modalOne.style.display = 'flex';
-    }, 1000);
-}
