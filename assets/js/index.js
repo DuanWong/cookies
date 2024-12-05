@@ -63,10 +63,10 @@ if (!getCookie("fake cookie")) {
 }
 
 acceptAll.addEventListener("click", () => {
-    setCookie("browser", getBrowser(), 15);
-    setCookie("os", getOS(), 15);
-    setCookie("screen width", screen.width, 15);
-    setCookie("screen height", screen.height, 15);
+    setCookie("Browser", getBrowser(), 15);
+    setCookie("OS", getOS(), 15);
+    setCookie("Screen width", screen.width, 15);
+    setCookie("Screen height", screen.height, 15);
     console.log(document.cookie);
     setCookie("fake cookie", "true", 15);
     modalOne.style.display = 'none';
@@ -79,19 +79,19 @@ settings.addEventListener("click", () => {
 
 savePreferences.addEventListener("click", () => {
     if (document.querySelector(".browser-name").checked) {
-        setCookie("browser", getBrowser(), 15);
+        setCookie("Browser", getBrowser(), 15);
     } 
 
     if (document.querySelector(".os-name").checked) {
-        setCookie("os", getOS(), 15);
+        setCookie("OS", getOS(), 15);
     } 
 
     if (document.querySelector(".screen-width").checked) {
-        setCookie("screen width", screen.width, 15);
+        setCookie("Screen width", screen.width, 15);
     } 
 
     if (document.querySelector(".screen-height").checked) {
-        setCookie("screen height", screen.height, 15);
+        setCookie("Screen height", screen.height, 15);
     } 
 
     console.log(document.cookie);
